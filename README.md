@@ -26,6 +26,8 @@ The dataset consists of 212,691 records with 17 attributes, simulating real-worl
 * Outcome Variables: Thyroid Cancer Risk (Low, Medium, High), Diagnosis (Benign, Malignant)
 This dataset is valuable for machine learning modeling, bias detection, fairness analysis, and medical research simulations in the domain of thyroid cancer risk assessment.
 
+https://www.kaggle.com/datasets/ankushpanday1/thyroid-cancer-risk-prediction-dataset
+
 ## Business Requirements
 The analysis is guided by the following business requirements:
 1.	Risk Factor Identification:
@@ -91,7 +93,7 @@ Certain countries and ethnicities have a higher prevalence of thyroid cancer due
 ## Unfixed Bugs & Limitations
 * Data Bias: Some demographic groups may be underrepresented.
 * Visualization Performance: Large dataset size may slow down interactive charts.
-* Missing Values: Some missing medical data may impact analysis accuracy.
+
 
 ## Development Roadmap
 Challenges & Solutions:
@@ -114,4 +116,5 @@ Library	Usage
 * GitHub Copilot: Provided code suggestions for visualization and statistical testing.
 * Code Institute LMS: Provided best practices and foundational knowledge.
 
-
+## Acknowledgements
+We would like to extend my heartfelt gratitude to Vasilica Pavaloi and Niel McEwen for their invaluable guidance and support throughout this project. Their expertise and encouragement have been instrumental in my learning journey. We would also like to thank our team for their collaboration and insightful feedback, which greatly contributed to the successful completion of this project.
