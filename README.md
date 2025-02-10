@@ -49,30 +49,29 @@ Certain countries and ethnicities have a higher prevalence of thyroid cancer due
    * Validation: Conduct geospatial analysis and visualize the distribution of thyroid cancer cases across different regions.
 
 ## Project Plan
-1.	Data Acquisition & Cleaning:
-   * Load the dataset and handle missing values.
-   * Standardize data formats (e.g., categorical encoding, numerical scaling).
-   * Address any inconsistencies in variable definitions.
-2.	Exploratory Data Analysis (EDA):
-   * Conduct summary statistics and distribution analysis.
-   * Examine correlations between thyroid cancer risk and various features.
-3.	Feature Engineering & Selection:
-   * Perform feature selection using statistical tests.
-4.	Data Visualization & Insights Generation:
-   * Develop plots to explore patterns.
-   * Create comparative analyses between high-risk and low-risk groups.
-5.	Dashboard Development:
-   * Build an interactive dashboard for easy exploration of findings.
-6.	Final Reporting & Recommendations:
-* Summarize findings and present actionable recommendations.
+# 1.	Data Acquisition & Cleaning:
+     * Load the dataset and handle missing values.
+     * Standardize data formats (e.g., categorical encoding, numerical scaling).
+     * Address any inconsistencies in variable definitions.
+# 2.	Exploratory Data Analysis (EDA):
+     * Conduct summary statistics and distribution analysis.
+     * Examine correlations between thyroid cancer risk and various features.
+# 3.	Feature Engineering & Selection:
+     * Perform feature selection using statistical tests.
+# 4.	Data Visualization & Insights Generation:
+     * Develop plots to explore patterns.
+     * Create comparative analyses between high-risk and low-risk groups.
+# 5.	Dashboard Development:
+     * Build an interactive dashboard for easy exploration of findings.
+# 6.	Final Reporting & Recommendations:
+     * Summarize findings and present actionable recommendations.
 
 ## Analysis Techniques Used
 1.	Descriptive Statistics: Mean, median, variance analysis.
 2.	Correlation Analysis: Pearson/Spearman correlation to identify key relationships.
 3.	Chi-Square Tests: Used for evaluating categorical relationships (e.g., gender vs. cancer risk).
 4.	Logistic Regression: Assessing the predictive value of medical indicators.
-5.	Decision Trees & Classification Models: To improve predictive analysis of cancer diagnosis.
-6.	Fairness & Bias Detection: Identifying imbalances in demographic representation.
+5.	Fairness & Bias Detection: Identifying imbalances in demographic representation.
 
 ## Ethical Considerations
    * Bias & Fairness: The dataset leans towards certain ethnicities and countries, which may introduce bias as Caucasion population had higher records of data but we couldn't risk resampling without potentially damaging the findings for this ethnic group.
