@@ -43,49 +43,71 @@ def load_data():
     try:
         # Try to load the cleaned data first
         df = pd.read_csv('thyroid_cancer_risk_data_cleaned.csv')
+        st.success("✅ Loaded cleaned dataset successfully!")
+        return df
     except FileNotFoundError:
         try:
             # Fallback to original data
             df = pd.read_csv('thyroid_cancer_risk_data.csv')
+            st.success("✅ Loaded original dataset successfully!")
+            return df
         except FileNotFoundError:
-            # If no data files found, create sample data
-            st.error("Data files not found. Please upload the thyroid cancer dataset.")
-            return None
-    return df
+            # If no data files found, show error and create sample data
+            st.error("❌ Data files not found. Creating sample data for demonstration.")
+            # Create a small sample dataset for demo purposes
+            np.random.seed(42)
+            sample_data = {
+                'Age': np.random.randint(20, 80, 100),
+                'Gender': np.random.choice(['Male', 'Female'], 100),
+                'Country': np.random.choice(['USA', 'UK', 'Canada', 'Australia'], 100),
+                'Thyroid Cancer Risk': np.random.choice(['Low', 'Medium', 'High'], 100),
+                'TSH': np.random.uniform(0.5, 5.0, 100),
+                'T3': np.random.uniform(80, 200, 100),
+                'T4': np.random.uniform(5, 15, 100)
+            }
+            return pd.DataFrame(sample_data)
+    except Exception as e:
+        st.error(f"❌ Error loading data: {str(e)}")
+        return None
 
 def main():
-    # Header
-    st.markdown('<h1 class="main-header">🏥 Thyroid Cancer Risk Analysis Dashboard</h1>', unsafe_allow_html=True)
-    
-    # Load data
-    df = load_data()
-    
-    if df is None:
-        st.stop()
-    
-    # Sidebar
-    st.sidebar.title("Navigation")
-    page = st.sidebar.selectbox("Choose a section:", [
-        "Overview",
-        "Data Exploration",
-        "Risk Factor Analysis",
-        "Demographic Analysis",
-        "Predictive Modeling",
-        "Key Insights"
-    ])
-    
-    if page == "Overview":
-        show_overview(df)
-    elif page == "Data Exploration":
-        show_data_exploration(df)
-    elif page == "Risk Factor Analysis":
-        show_risk_factor_analysis(df)
-    elif page == "Demographic Analysis":
-        show_demographic_analysis(df)
-    elif page == "Predictive Modeling":
-        show_predictive_modeling(df)
-    elif page == "Key Insights":
-        show_key_insights(df)
+    # Add a loading indicator
+    with st.spinner("🏥 Loading Thyroid Cancer Risk Analysis Dashboard..."):
+        # Header
+        st.markdown('<h1 class="main-header">🏥 Thyroid Cancer Risk Analysis Dashboard</h1>', unsafe_allow_html=True)
+        
+        # Load data
+        df = load_data()
+        
+        if df is None:
+            st.stop()
+        
+        # Show success message
+        st.success("✅ Dashboard loaded successfully!")
+        
+        # Sidebar
+        st.sidebar.title("Navigation")
+        page = st.sidebar.selectbox("Choose a section:", [
+            "Overview",
+            "Data Exploration",
+            "Risk Factor Analysis",
+            "Demographic Analysis",
+            "Predictive Modeling",
+            "Key Insights"
+        ])
+        
+        if page == "Overview":
+            show_overview(df)
+        elif page == "Data Exploration":
+            show_data_exploration(df)
+        elif page == "Risk Factor Analysis":
+            show_risk_factor_analysis(df)
+        elif page == "Demographic Analysis":
+            show_demographic_analysis(df)
+        elif page == "Predictive Modeling":
+            show_predictive_modeling(df)
+        elif page == "Key Insights":
+            show_key_insights(df)
 
 def show_overview(df):
     st.header("📊 Project Overview")
