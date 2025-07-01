@@ -1,2 +1,7 @@
-jupyter_notebooks/*
+jupyter_notebooks/
 README.md
+*.png
+*.pdf
+*.pbix
+.git/
+.gitignore
